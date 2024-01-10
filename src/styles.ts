@@ -26,5 +26,4 @@ export const Container = styled.div`
   height: 1290px;
   flex-shrink: 0;
   margin: 0 auto;
-  background-color: red;
 `

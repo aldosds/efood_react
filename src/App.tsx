@@ -1,5 +1,19 @@
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
 import Header from './components/Header'
 import { GlobalCss, Container } from './styles'
+import MenuList from './components/MenuList'
+
+const rotas = createBrowserRouter([
+  {
+    path: '/',
+    element: (
+      <>
+        <MenuList />
+      </>
+    )
+  }
+])
 
 function App() {
   return (
@@ -8,7 +22,9 @@ function App() {
       <div>
         <Header />
       </div>
-      <Container>Listagem</Container>
+      <Container>
+        <RouterProvider router={rotas} />
+      </Container>
     </>
   )
 }
