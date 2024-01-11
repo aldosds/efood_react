@@ -5,12 +5,15 @@ import { cores } from '../../styles'
 
 export const ButtonContainer = styled.button`
   background-color: ${cores.vermelha};
-  color: ${cores.begeClara}
   text-align: center;
   font-size: 14px;
   font-weight: 700;
   padding: 4px 6px;
   display: inline-block;
+  color: ${cores.begeClara};
+  border: none;
+  margin: 16px 0 8px 8px;
+  cursor: pointer;
 `
 
 export const ButtonLink = styled(Link)`
