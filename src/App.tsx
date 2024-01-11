@@ -2,16 +2,12 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import Header from './components/Header'
 import { GlobalCss, Container } from './styles'
-import MenuList from './components/MenuList'
+import Home from './pages/Home'
 
 const rotas = createBrowserRouter([
   {
     path: '/',
-    element: (
-      <>
-        <MenuList />
-      </>
-    )
+    element: <Home />
   }
 ])
 
