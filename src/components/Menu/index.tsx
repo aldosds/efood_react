@@ -2,24 +2,37 @@ import Button from '../Botton'
 import Note from '../Nota'
 import Tag from '../Tag'
 
-import estrela from '../../assets/images/estrela.svg'
+import { Card, Descricao, Titulo, Infos, IntoTitulo, Pontuacao } from './styles'
 
-import { Card, Descricao, Titulo } from './styles'
+type Props = {
+  title: string
+  description: string
+  infos: string[]
+  image: string
+  star: string
+  note: string
+}
 
-const Menu = () => (
+const Menu = ({ title, description, infos, image, star, note }: Props) => (
   <Card>
-    <img src="//placehold.it/472x217" alt="" />
-    <Titulo>Nome da refeiçao</Titulo>
-    <Note>4.9</Note>
-    <img src={estrela} alt="Estrela" />
-    <Tag>Destaque da semana</Tag>
-    <Tag>Japonesa</Tag>
-    <Descricao>
-      Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis
-      frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega
-      rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão
-      sem sair do lar com nosso delivery!
-    </Descricao>
+    <img src={image} alt={title} />
+    <Infos>
+      {infos.map((info) => (
+        <Tag key={info}>{info}</Tag>
+      ))}
+    </Infos>
+    <IntoTitulo>
+      <div>
+        <Titulo>{title}</Titulo>
+      </div>
+      <div>
+        <Pontuacao>
+          <Note>{note}</Note>
+          <img src={star} alt="Estrela" />
+        </Pontuacao>
+      </div>
+    </IntoTitulo>
+    <Descricao>{description}</Descricao>
     <Button type="link" to="/menu" title="Clique aqui para saber mais">
       Saiba mais
     </Button>
