@@ -1,21 +1,31 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
-import { TagContainer } from '../Tag/styles'
+import { ButtonLink } from '../Button/styles'
 
 export const Card = styled.div`
-  background-color: ${cores.branca};
+  background-color: ${cores.vermelha};
   border: 1px solid ${cores.vermelha};
   position: relative;
+  color: ${cores.begeEscura};
 
-  ${TagContainer} {
-    margin-right: 8px;
+  img {
+    padding: 8px;
+  }
+
+  ${ButtonLink} {
+    background-color: ${cores.begeEscura};
+    color: ${cores.vermelha};
+    width: 304px;
+    height: 24px;
+    margin: 8px;
   }
 `
 
 export const Titulo = styled.h3`
   font-size: 18px;
   font-weight: 700;
-  margin: 8px 0 16px 7px;
+  margin-left: 8px;
+  margin-bottom: 8px;
 `
 export const Descricao = styled.p`
   font-size: 14px;
@@ -25,18 +35,8 @@ export const Descricao = styled.p`
   margin-right: 8px;
 `
 
-export const Infos = styled.div`
-  position: absolute;
-  top: 16px;
-  right: 0;
-`
-
 export const IntoTitulo = styled.div`
   display: flex;
   justify-content: space-between;
   margin-right: 8px;
-`
-
-export const Pontuacao = styled.div`
-  display: flex;
 `

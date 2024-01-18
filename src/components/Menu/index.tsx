@@ -1,4 +1,4 @@
-import Button from '../Botton'
+import Button from '../Button'
 import Note from '../Nota'
 import Tag from '../Tag'
 
@@ -33,7 +33,7 @@ const Menu = ({ title, description, infos, image, star, note }: Props) => (
       </div>
     </IntoTitulo>
     <Descricao>{description}</Descricao>
-    <Button type="button" to="/menu" title="Clique aqui para saber mais">
+    <Button type="link" to="/dishes" title="Clique aqui para saber mais">
       Saiba mais
     </Button>
   </Card>
