@@ -4,6 +4,8 @@ import Profile from '../../models/Profile'
 import pizzaMarguerita from '../../assets/images/pizzaMarguerita.png'
 import DisheHeader from '../../components/DisheHeader'
 import { Container } from '../../styles'
+import Footer from '../../components/Footer'
+import Banner from '../../components/Banner'
 
 const cardapio: Profile[] = [
   {
@@ -53,9 +55,11 @@ const cardapio: Profile[] = [
 const Dishes = () => (
   <>
     <DisheHeader />
+    <Banner />
     <Container>
       <DisheList profiles={cardapio} />
     </Container>
+    <Footer />
   </>
 )
 

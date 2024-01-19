@@ -5,6 +5,7 @@ import estrela from '../../assets/images/estrela.svg'
 import laDolceVitaTrattoria from '../../assets/images/laDolceVitaTrattoria.png'
 import { Container } from '../../styles'
 import Header from '../../components/Header'
+import Footer from '../../components/Footer'
 
 const cardapio: Food[] = [
   {
@@ -75,6 +76,7 @@ const Home = () => (
     <Container>
       <MenuList foods={cardapio} />
     </Container>
+    <Footer />
   </>
 )
 

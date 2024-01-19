@@ -2,7 +2,6 @@ import Dishe from '../Dishe'
 import { Container, List } from './styles'
 
 import Profile from '../../models/Profile'
-import DisheHeader from '../DisheHeader'
 
 type Props = {
   profiles: Profile[]

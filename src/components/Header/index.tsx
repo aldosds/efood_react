@@ -4,10 +4,12 @@ import logo from '../../assets/images/logo.svg'
 
 const Header = () => (
   <HeaderBar>
-    <img src={logo} alt="EFOOD" />
-    <p>
-      Viva experiências gastronômicas <br /> no conforto da sua casa
-    </p>
+    <div className="container">
+      <img src={logo} alt="EFOOD" />
+      <p>
+        Viva experiências gastronômicas <br /> no conforto da sua casa
+      </p>
+    </div>
   </HeaderBar>
 )
 
