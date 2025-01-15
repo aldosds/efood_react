@@ -1,5 +1,5 @@
 import DisheList from '../../components/DisheList'
-import Profile from '../../models/Profile'
+import ProfileDishes from '../../models/ProfileDishes'
 
 import pizzaMarguerita from '../../assets/images/pizzaMarguerita.png'
 import DisheHeader from '../../components/DisheHeader'
@@ -7,7 +7,7 @@ import { Container } from '../../styles'
 import Footer from '../../components/Footer'
 import Banner from '../../components/Banner'
 
-const cardapio: Profile[] = [
+const cardapio: ProfileDishes[] = [
   {
     id: 1,
     title: 'Pizza Marguerita',

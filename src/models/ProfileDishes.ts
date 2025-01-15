@@ -1,4 +1,4 @@
-class Profile {
+class ProfileDishes {
   id: number
   title: string
   description: string
@@ -12,4 +12,4 @@ class Profile {
   }
 }
 
-export default Profile
+export default ProfileDishes

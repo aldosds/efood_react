@@ -1,22 +1,22 @@
 import Dishe from '../Dishe'
 import { Container, List } from './styles'
 
-import Profile from '../../models/Profile'
+import ProfileDishes from '../../models/ProfileDishes'
 
 type Props = {
-  profiles: Profile[]
+  profiles: ProfileDishes[]
 }
 
 const DisheList = ({ profiles }: Props) => (
   <>
     <Container>
       <List>
-        {profiles.map((Profile) => (
+        {profiles.map((ProfileDishes) => (
           <Dishe
-            key={Profile.id}
-            title={Profile.title}
-            description={Profile.description}
-            image={Profile.image}
+            key={ProfileDishes.id}
+            title={ProfileDishes.title}
+            description={ProfileDishes.description}
+            image={ProfileDishes.image}
           />
         ))}
       </List>
