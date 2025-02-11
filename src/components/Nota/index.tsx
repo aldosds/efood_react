@@ -2,8 +2,7 @@ import { NoteContainer } from './styles'
 
 export type Props = {
   size?: 'small'
-  // children: JSX.Element
-  children: string
+  children: number
 }
 
 const Note = ({ children, size = 'small' }: Props) => (

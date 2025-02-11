@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const Container = styled.section``
+export const Container = styled.section`
+  width: 1024px;
+  flex-shrink: 0;
+  margin: 0 auto;
+`
 
 export const List = styled.ul`
   display: grid;

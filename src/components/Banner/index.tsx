@@ -1,18 +1,22 @@
-import { Image, NameDidk, Title } from './styles'
+import { ProfileDishes } from '../../pages/Dishes'
+import { Image, NameRest, Title } from './styles'
 
-import bannerLaDolceVitaTrattoria from '../../assets/images/bannerLaDolceVitaTrattoria.png'
+type Props = {
+  banner: ProfileDishes
+}
 
-const Banner = () => (
+const Banner = ({ banner }: Props) => (
   <Image
+    key={banner.id}
     style={{
-      background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${bannerLaDolceVitaTrattoria})`,
+      background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${banner.capa})`,
       backgroundRepeat: `no-repeat`,
       backgroundSize: `cover`
     }}
   >
     <div className="container">
-      <Title>Italiana</Title>
-      <NameDidk>La Dolce Vita Trattoria</NameDidk>
+      <Title>{banner.tipo}</Title>
+      <NameRest>{banner.titulo}</NameRest>
     </div>
   </Image>
 )

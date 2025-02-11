@@ -12,6 +12,12 @@ export const Card = styled.div`
   }
 `
 
+export const Image = styled.img`
+  width: 472px;
+  height: 217px;
+  object-fit: cover;
+`
+
 export const Titulo = styled.h3`
   font-size: 18px;
   font-weight: 700;

@@ -1,66 +1,76 @@
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+
 import DisheList from '../../components/DisheList'
-import ProfileDishes from '../../models/ProfileDishes'
 
-import pizzaMarguerita from '../../assets/images/pizzaMarguerita.png'
 import DisheHeader from '../../components/DisheHeader'
-import { Container } from '../../styles'
-import Footer from '../../components/Footer'
 import Banner from '../../components/Banner'
+import Footer from '../../components/Footer'
 
-const cardapio: ProfileDishes[] = [
-  {
-    id: 1,
-    title: 'Pizza Marguerita',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizzaMarguerita
-  },
-  {
-    id: 2,
-    title: 'Pizza Marguerita',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizzaMarguerita
-  },
-  {
-    id: 3,
-    title: 'Pizza Marguerita',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizzaMarguerita
-  },
-  {
-    id: 4,
-    title: 'Pizza Marguerita',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizzaMarguerita
-  },
-  {
-    id: 5,
-    title: 'Pizza Marguerita',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizzaMarguerita
-  },
-  {
-    id: 6,
-    title: 'Pizza Marguerita',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizzaMarguerita
+export type ProfileDishes = {
+  id: number
+  titulo: string
+  destacado: boolean
+  tipo: string
+  avaliacao: number
+  descricao: string
+  capa: string
+  cardapio: [
+    {
+      foto: string
+      preco: number
+      id: number
+      nome: string
+      descricao: string
+      porcao: string
+    }
+  ]
+}
+
+const Dishes = () => {
+  const { id } = useParams()
+
+  const [banner, setBanner] = useState<ProfileDishes>()
+  const [cardapio, setCardapio] = useState<ProfileDishes[]>([])
+
+  useEffect(() => {
+    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
+      .then((res) => res.json())
+      .then((res) => setBanner(res))
+  }, [id])
+
+  useEffect(() => {
+    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
+      .then((res) => res.json())
+      .then((res) => setCardapio(res))
+  }, [id])
+
+  // useEffect(() => {
+  //   fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes`)
+  //     .then((res) => res.json())
+  //     .then((res) => setCardapio(res))
+  // }, [])
+
+  if (!banner) {
+    return <h3>Carregando...</h3>
   }
-]
 
-const Dishes = () => (
-  <>
-    <DisheHeader />
-    <Banner />
-    <Container>
+  if (!cardapio) {
+    return <h3>Carregando...</h3>
+  }
+
+  // console.log(banner)
+  console.log(cardapio)
+  // console.log(typeof cardapio)
+
+  return (
+    <>
+      <DisheHeader />
+      <Banner banner={banner} />
       <DisheList profiles={cardapio} />
-    </Container>
-    <Footer />
-  </>
-)
+      <Footer />
+    </>
+  )
+}
 
 export default Dishes
