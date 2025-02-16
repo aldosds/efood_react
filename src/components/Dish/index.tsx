@@ -25,11 +25,11 @@ type Props = {
   serve: string
   image: string
   descriptionModal: string
-  priceModal: string[]
+  priceModal: string
   id: number
 }
 
-const Dishe = ({
+const Dish = ({
   title,
   description,
   serve,
@@ -40,7 +40,7 @@ const Dishe = ({
 }: Props) => {
   const getDescricao = (descricao: string) => {
     if (descricao.length > 171) {
-      return descricao.slice(0, 125) + '...'
+      return descricao.slice(0, 120) + '...'
     }
     return descricao
   }
@@ -120,4 +120,4 @@ const Dishe = ({
   )
 }
 
-export default Dishe
+export default Dish

@@ -1,8 +1,8 @@
-import { ProfileDishes } from '../../pages/Dishes'
+import { DadosRestaurantes } from '../../pages/Dishes'
 import { Image, NameRest, Title } from './styles'
 
 type Props = {
-  banner: ProfileDishes
+  banner: DadosRestaurantes
 }
 
 const Banner = ({ banner }: Props) => (

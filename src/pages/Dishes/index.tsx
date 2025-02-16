@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-import DisheList from '../../components/DisheList'
-
-import DisheHeader from '../../components/DisheHeader'
+import DishList from '../../components/DishList'
+import DishHeader from '../../components/DishHeader'
 import Banner from '../../components/Banner'
 import Footer from '../../components/Footer'
 
-export type ProfileDishes = {
+export type DadosRestaurantes = {
   id: number
   titulo: string
   destacado: boolean
@@ -30,44 +29,36 @@ export type ProfileDishes = {
 const Dishes = () => {
   const { id } = useParams()
 
-  const [banner, setBanner] = useState<ProfileDishes>()
-  const [cardapio, setCardapio] = useState<ProfileDishes[]>([])
+  const [restaurantes, setRestaurantes] = useState<DadosRestaurantes>()
+  const [carregando, setCarregando] = useState(true) // Estado de carregamento
 
   useEffect(() => {
     fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
       .then((res) => res.json())
-      .then((res) => setBanner(res))
+      .then((res) => {
+        setRestaurantes(res)
+        setCarregando(false) // Define carregando como falso após receber os dados
+      })
+      .catch((erro) => {
+        console.error('Erro ao buscar dados:', erro)
+        setCarregando(false) // Mesmo em caso de erro, para de exibir "Carregando..."
+      })
   }, [id])
 
-  useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((res) => setCardapio(res))
-  }, [id])
-
-  // useEffect(() => {
-  //   fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes`)
-  //     .then((res) => res.json())
-  //     .then((res) => setCardapio(res))
-  // }, [])
-
-  if (!banner) {
+  if (carregando) {
     return <h3>Carregando...</h3>
   }
 
-  if (!cardapio) {
-    return <h3>Carregando...</h3>
+  if (!restaurantes) {
+    // Verifica se restaurante é nulo ou indefinido
+    return <h3>Restaurante não encontrado.</h3>
   }
-
-  // console.log(banner)
-  console.log(cardapio)
-  // console.log(typeof cardapio)
 
   return (
     <>
-      <DisheHeader />
-      <Banner banner={banner} />
-      <DisheList profiles={cardapio} />
+      <DishHeader />
+      <Banner banner={restaurantes} />
+      <DishList profiles={[restaurantes]} />
       <Footer />
     </>
   )

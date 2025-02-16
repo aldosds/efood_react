@@ -3,7 +3,7 @@ import { cores } from '../../styles'
 
 import vetor from '../../assets/images/vetor.svg'
 
-export const DisheHeaderBar = styled.header`
+export const DishHeaderBar = styled.header`
   background: ${cores.begeEscura} url(${vetor});
   width: 100%;
   text-align: center;
