@@ -24,7 +24,7 @@ type Props = {
   id: number
 }
 
-const Menu = ({ title, description, infos, image, note, id }: Props) => {
+const Restaurante = ({ title, description, infos, image, note, id }: Props) => {
   return (
     <Card>
       <Image src={image} alt={title} />
@@ -54,4 +54,4 @@ const Menu = ({ title, description, infos, image, note, id }: Props) => {
   )
 }
 
-export default Menu
+export default Restaurante

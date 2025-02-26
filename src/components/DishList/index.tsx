@@ -1,4 +1,4 @@
-import { DadosRestaurantes } from '../../pages/Dishes'
+import { DadosRestaurantes } from '../../pages/Home'
 import { Container } from '../../styles'
 import Dish from '../Dish'
 import { List } from './styles'

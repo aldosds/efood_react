@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react'
 
-import MenuList from '../../components/MenuList'
+import { useGetRestauranteQuery } from '../../services/api'
+
+import RestauranteList from '../../components/RestauranteList'
 
 import { Container } from '../../styles'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 
-export type Food = {
+export type DadosRestaurantes = {
   id: number
   titulo: string
   destacado: boolean
@@ -27,19 +29,23 @@ export type Food = {
 }
 
 const Home = () => {
-  const [cardapio, setCardapio] = useState<Food[]>([])
+  const { data: restaurantes, isLoading } = useGetRestauranteQuery()
 
-  useEffect(() => {
-    fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
-      .then((res) => res.json())
-      .then((res) => setCardapio(res))
-  }, [])
+  if (isLoading) {
+    // Usando isLoading para verificar o carregamento
+    return <h3>Carregando...</h3>
+  }
+
+  if (!restaurantes) {
+    // Adicionado uma verificação para cardapio nulo ou indefinido para evitar erros.
+    return <h3>Erro ao carregar os dados.</h3>
+  }
 
   return (
     <>
       <Header />
       <Container>
-        <MenuList foods={cardapio} />
+        <RestauranteList restaurantes={restaurantes} />
       </Container>
       <Footer />
     </>

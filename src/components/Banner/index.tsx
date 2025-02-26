@@ -1,4 +1,4 @@
-import { DadosRestaurantes } from '../../pages/Dishes'
+import { DadosRestaurantes } from '../../pages/Home'
 import { Image, NameRest, Title } from './styles'
 
 type Props = {
