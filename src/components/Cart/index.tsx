@@ -1,0 +1,42 @@
+import { ButtonContainer } from '../Button/styles'
+import { Card, CartContainer, Overlay, Prices, Sidebar } from './styles'
+
+import pizza from '../../assets/images/pizzaMarguerita.png'
+
+const Cart = () => (
+  <CartContainer>
+    <Overlay />
+    <Sidebar>
+      <ul>
+        <Card>
+          <img src={pizza} />
+          <div>
+            <h3>Pizza Marguerita</h3>
+            <span>R$ 60,90</span>
+          </div>
+          <button type="button" />
+        </Card>
+        <Card>
+          <img src={pizza} />
+          <div>
+            <h3>Pizza Marguerita</h3>
+            <span>R$ 60,90</span>
+          </div>
+          <button type="button" />
+        </Card>
+      </ul>
+      <Prices>
+        <p>Valor total</p>
+        <p>R$ 182,70</p>
+      </Prices>
+      <ButtonContainer
+        title="Clique aqui para continuar com a compra"
+        type="button"
+      >
+        Continuar com a entrega
+      </ButtonContainer>
+    </Sidebar>
+  </CartContainer>
+)
+
+export default Cart
