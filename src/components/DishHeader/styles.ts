@@ -27,3 +27,9 @@ export const DishHeaderBar = styled.header`
     color: ${cores.vermelha};
   }
 `
+
+export const CartButton = styled.a`
+  text-decoration: none;
+  color: ${cores.vermelha};
+  cursor: pointer;
+`
