@@ -8,10 +8,10 @@ import twitter from '../../assets/images/twitter.svg'
 const Footer = () => (
   <FooterContainer>
     <div className="container">
-      <div>
+      <div className="content">
         <img src={logo} alt="EFOOD" />
       </div>
-      <Links>
+      <Links className="content">
         <LinkItem>
           <a href="#">
             <img src={instagram} alt="" />

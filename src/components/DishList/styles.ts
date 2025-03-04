@@ -14,7 +14,6 @@ export const List = styled.ul`
 
   @media (max-width: ${breackpoints.tablet}) {
     grid-template-columns: 1fr;
-    max-width: 38%;
   }
 
   .container {

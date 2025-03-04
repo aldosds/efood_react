@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breackpoints, cores } from '../../styles'
 
 import vetor from '../../assets/images/vetor.svg'
 
@@ -10,6 +10,10 @@ export const HeaderBar = styled.header`
   margin-bottom: 80px;
   text-align: center;
 
+  @media (max-width: ${breackpoints.tablet}) {
+    margin-bottom: 40px;
+  }
+
   img {
     margin-top: 60px;
   }
@@ -18,5 +22,9 @@ export const HeaderBar = styled.header`
     font-size: 36px;
     font-weight: 900;
     margin-top: 138px;
+
+    @media (max-width: ${breackpoints.tablet}) {
+      margin-top: 20px;
+    }
   }
 `

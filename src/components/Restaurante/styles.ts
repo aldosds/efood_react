@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breackpoints, cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 
 export const Card = styled.div`
@@ -16,6 +16,10 @@ export const Image = styled.img`
   width: 472px;
   height: 217px;
   object-fit: cover;
+
+  @media (max-width: ${breackpoints.tablet}) {
+    width: 230px;
+  }
 `
 
 export const Titulo = styled.h3`

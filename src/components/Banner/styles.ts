@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breackpoints, cores } from '../../styles'
 
 export const Image = styled.div`
   width: 100%;
@@ -21,4 +21,8 @@ export const NameRest = styled.h2`
   font-size: 32px;
   font-weight: 900;
   margin-top: 156px;
+
+  @media (max-width: ${breackpoints.tablet}) {
+    margin-top: 130px;
+  }
 `

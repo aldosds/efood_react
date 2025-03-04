@@ -31,8 +31,9 @@ export const GlobalCss = createGlobalStyle`
     flex-shrink: 0;
     margin: 0 auto;
 
-    @media (max-width: ${breackpoints.desktop}) {
-      max-width: 78%;
+    @media (max-width: ${breackpoints.tablet}) {
+      width: 64%;
+      margin: auto;
     }
   }
 `
@@ -41,7 +42,7 @@ export const Container = styled.div`
   flex-shrink: 0;
   margin: 0 auto;
 
-  @media (max-width: ${breackpoints.desktop}) {
+  @media (max-width: ${breackpoints.tablet}) {
     max-width: 78%;
   }
 `

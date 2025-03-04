@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breackpoints, cores } from '../../styles'
 
 export const FooterContainer = styled.footer`
   background: ${cores.begeEscura};
@@ -11,6 +11,11 @@ export const FooterContainer = styled.footer`
   .container {
     display: grid;
     justify-content: center;
+    margin: auto;
+  }
+
+  .content {
+    margin: auto;
   }
 
   img {
@@ -22,6 +27,11 @@ export const FooterContainer = styled.footer`
     font-weight: 400;
     margin-top: 80px;
     width: 480px;
+
+    @media (max-width: ${breackpoints.tablet}) {
+      width: 78%;
+      margin: auto;
+    }
   }
 `
 export const Links = styled.ul`
@@ -32,4 +42,8 @@ export const Links = styled.ul`
 export const LinkItem = styled.li`
   margin: 0 4px;
   margin-top: -8px;
+
+  @media (max-width: ${breackpoints.tablet}) {
+    margin-bottom: 70px;
+  }
 `

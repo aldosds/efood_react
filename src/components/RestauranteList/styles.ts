@@ -7,6 +7,12 @@ export const List = styled.ul`
   gap: 48px 80px;
 
   @media (max-width: ${breackpoints.desktop}) {
+    gap: 30px;
+    width: min-content;
+    margin: auto;
+  }
+
+  @media (max-width: ${breackpoints.tablet}) {
     grid-template-columns: 1fr;
     width: min-content;
   }
