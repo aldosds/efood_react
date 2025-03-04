@@ -8,6 +8,11 @@ export const cores = {
   amarela: '#FFB930'
 }
 
+export const breackpoints = {
+  desktop: '1024px',
+  tablet: '768px'
+}
+
 export const GlobalCss = createGlobalStyle`
   * {
     margin: 0;
@@ -25,10 +30,18 @@ export const GlobalCss = createGlobalStyle`
     width: 1024px;
     flex-shrink: 0;
     margin: 0 auto;
+
+    @media (max-width: ${breackpoints.desktop}) {
+      max-width: 78%;
+    }
   }
 `
 export const Container = styled.div`
   width: 1024px;
   flex-shrink: 0;
   margin: 0 auto;
+
+  @media (max-width: ${breackpoints.desktop}) {
+    max-width: 78%;
+  }
 `

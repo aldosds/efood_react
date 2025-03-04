@@ -5,6 +5,7 @@ export const Image = styled.div`
   width: 100%;
   height: 280px;
   display: block;
+  margin-bottom: 50px;
   /* background-repeat: no-repeat;
   background-size: cover; */
 `

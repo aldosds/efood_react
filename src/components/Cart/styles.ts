@@ -80,6 +80,7 @@ export const Card = styled.li`
     position: absolute;
     bottom: 8px;
     right: 8px;
+    cursor: pointer;
   }
 `
 

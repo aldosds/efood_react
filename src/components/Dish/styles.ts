@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breackpoints, cores } from '../../styles'
 import { ButtonContainer } from '../Button/styles'
 
 export const Card = styled.div`
@@ -77,6 +77,17 @@ export const ImageModal = styled.img`
   margin-left: 32px;
   margin-bottom: 32px;
   object-fit: cover;
+
+  @media (max-width: ${breackpoints.desktop}) {
+    margin: 16px 0;
+    width: 320px;
+  }
+
+  @media (max-width: ${breackpoints.tablet}) {
+    margin: 16px 0;
+    width: 246px;
+    height: 180px;
+  }
 `
 
 export const TituloModal = styled.h3`
@@ -115,6 +126,17 @@ export const Modal = styled.div`
 
   .container {
     display: flex;
+
+    @media (max-width: ${breackpoints.desktop}) {
+      width: 80%;
+      display: block;
+      width: min-content;
+    }
+
+    @media (max-width: ${breackpoints.tablet}) {
+      max-width: 74%;
+      display: block;
+    }
   }
 
   .overlay {
