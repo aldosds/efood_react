@@ -18,7 +18,7 @@ export const Image = styled.img`
   object-fit: cover;
 
   @media (max-width: ${breackpoints.tablet}) {
-    width: 230px;
+    width: 320px;
   }
 `
 
