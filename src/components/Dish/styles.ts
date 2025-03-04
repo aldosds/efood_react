@@ -130,13 +130,13 @@ export const Modal = styled.div`
     @media (max-width: ${breackpoints.desktop}) {
       width: 80%;
       display: block;
-      width: min-content;
+      /* width: min-content; */
     }
 
-    @media (max-width: ${breackpoints.tablet}) {
+    /* @media (max-width: ${breackpoints.tablet}) {
       max-width: 74%;
       display: block;
-    }
+    } */
   }
 
   .overlay {

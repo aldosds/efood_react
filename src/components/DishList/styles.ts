@@ -24,5 +24,9 @@ export const List = styled.ul`
     @media (max-width: ${breackpoints.desktop}) {
       width: 70%;
     }
+
+    @media (max-width: ${breackpoints.tablet}) {
+      width: 100%;
+    }
   }
 `
