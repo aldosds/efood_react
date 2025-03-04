@@ -1,6 +1,7 @@
 import { DadosRestaurantes } from '../../pages/Home'
+import { Container } from '../../styles'
 import Restaurante from '../Restaurante'
-import { Container, List } from './styles'
+import { List } from './styles'
 
 type Props = {
   restaurantes: DadosRestaurantes[]

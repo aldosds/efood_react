@@ -18,8 +18,13 @@ import {
   ModalContent
 } from './styles'
 import { ButtonContainer } from '../Button/styles'
+import { useDispatch } from 'react-redux'
+
+import { add, open } from '../../store/reducers/cart'
+import { DadosRestaurantes } from '../../pages/Home'
 
 type Props = {
+  cart: DadosRestaurantes
   title: string
   description: string
   serve: string
@@ -30,6 +35,7 @@ type Props = {
 }
 
 const Dish = ({
+  cart,
   title,
   description,
   serve,
@@ -51,6 +57,27 @@ const Dish = ({
     setModalEstaAberto(false)
   }
 
+  const dispatch = useDispatch()
+
+  // const addToCart = () => {
+  //   dispatch(add(cart))
+  //   dispatch(open())
+  // }
+
+  const addToCart = () => {
+    const foundDish = cart.cardapio.find((dish) => dish.id === id)
+
+    if (foundDish) {
+      const itemToAdd = {
+        ...cart,
+        cardapio: [foundDish] as [typeof foundDish] // Asserção de tipo
+      }
+      dispatch(add(itemToAdd))
+      dispatch(open())
+    } else {
+      console.error('Item não encontrado no cardápio.')
+    }
+  }
   return (
     <>
       {/* CARD */}
@@ -100,7 +127,8 @@ const Dish = ({
                   <DescricaoModal>{serve}</DescricaoModal>
                   <ButtonContainer
                     type="button"
-                    title="Clique aqui para saber mais"
+                    title="Clique aqui para adicionar ao carrinho"
+                    onClick={addToCart}
                   >
                     Adicionar ao carrinho - {priceModal}
                   </ButtonContainer>

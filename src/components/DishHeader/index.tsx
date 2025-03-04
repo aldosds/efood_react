@@ -4,10 +4,12 @@ import logo from '../../assets/images/logo.svg'
 import { Link } from 'react-router-dom'
 
 import { open } from '../../store/reducers/cart'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
 
 const DishHeader = () => {
   const dispatch = useDispatch()
+  const { items } = useSelector((state: RootReducer) => state.cart)
 
   const openCart = () => {
     dispatch(open())
@@ -18,7 +20,9 @@ const DishHeader = () => {
       <div className="container">
         <Link to="/">Restaurantes</Link>
         <img src={logo} alt="EFOOD" />
-        <CartButton onClick={openCart}>0 produto(s) no carrinho</CartButton>
+        <CartButton onClick={openCart}>
+          {items.length} produto(s) no carrinho
+        </CartButton>
       </div>
     </DishHeaderBar>
   )
